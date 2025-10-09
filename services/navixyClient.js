@@ -28,7 +28,21 @@ async function getTrackerIds(hash) {
   throw new Error("Error obteniendo trackers");
 }
 
+async function getTrackerLabel(hash, trackerId) {
+  const res = await axios.post(`${API}/v2/tracker/read`, {
+    hash,
+    tracker_id: trackerId
+  });
+
+  if (res.data.success && res.data.value && res.data.value.label) {
+    return res.data.value.label;
+  }
+
+  throw new Error('No se pudo obtener el label del tracker');
+}
+
 module.exports = {
   getAuthHash,
-  getTrackerIds
+  getTrackerIds,
+  getTrackerLabel
 };

@@ -10760,3 +10760,746 @@
 [2025-10-08 17:37:31] info: 📦 Evento tipo: state_batch (1 elementos)
 [2025-10-08 17:37:31] info: Logg: (1 elementos)
 [2025-10-08 17:37:31] info: 📌 Fuente 10433582, tracker 3437670, code: 42, sub: 42_1
+[2025-10-08 18:31:07] info: 🔌 Iniciando conexión WebSocket con Navixy...
+[2025-10-08 18:31:16] info: Mapeo source->tracker cargado: 5 elementos
+[2025-10-08 18:31:16] info: Lista de trackers mapeados:
+[2025-10-08 18:31:16] info: Source ID: 10432208 → Tracker ID: 3435108
+[2025-10-08 18:31:16] info: Source ID: 10433582 → Tracker ID: 3437670
+[2025-10-08 18:31:16] info: Source ID: 10433901 → Tracker ID: 3438269
+[2025-10-08 18:31:16] info: Source ID: 10433944 → Tracker ID: 3438441
+[2025-10-08 18:31:16] info: Source ID: 10434741 → Tracker ID: 3440271
+[2025-10-08 18:31:16] info: Conectando WebSocket a: wss://www.flotaobd2.com/api-v2/wse/subscription?X-Atmosphere-tracking-id=0&X-Atmosphere-Framework=4.0.0&X-Atmosphere-Transport=websocket&Content-Type=application/json&X-atmo-protocol=true
+[2025-10-08 18:31:16] info: WebSocket conectado
+[2025-10-08 18:31:24] info: Suscripción enviada con hash: 1c30dcef7a03e0b407a20b797bef78db
+[2025-10-08 18:31:24] info: Mensaje directo websocket: {"events":["state_batch","readings_batch"],"data":{"state_batch":{"value":{"3435108":"normal","3437670":"normal","3438269":"normal","3438441":"normal","3440271":"normal"}},"readings_batch":{"value":{"3435108":"normal","3437670":"normal","3438269":"normal","3438441":"normal","3440271":"normal"}}},"type":"response","action":"subscription/subscribe"}
+[2025-10-08 18:31:24] info: Mensaje directo websocket: {"data":[{"state":{"source_id":10433582,"gps":{"updated":"2025-10-08T17:27:04-06:00","signal_level":100,"location":{"lat":20.413698,"lng":-102.524583},"heading":94,"speed":36,"alt":1558},"connection_status":"offline","movement_status":"moving","movement_status_update":"2025-10-08T16:57:20-06:00","ignition":true,"ignition_update":"2025-10-08T16:56:42-06:00","inputs":[true,false,false,true],"inputs_update":"2025-10-08T17:27:04-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T17:27:04-06:00","last_update":"2025-10-08T17:42:37-06:00","gsm":{"updated":"2025-10-08T17:27:04-06:00","signal_level":29,"network_name":"TelCel/America Movil","roaming":null},"battery_level":66,"battery_update":"2025-10-08T17:27:04-06:00","additional":{"sub_event_code":{"value":"42_1","updated":"2025-10-08T17:22:29-06:00"},"moving":{"value":"1","updated":"2025-10-08T17:27:04-06:00"},"event_code":{"value":"42","updated":"2025-10-08T17:22:29-06:00"},"stt_mode":{"value":"1","updated":"2025-10-08T17:27:04-06:00"}},"actual_track_update":"2025-10-08T16:57:20-06:00"},"type":"source_state_event"},{"state":{"source_id":10432208,"gps":{"updated":"2025-10-08T18:26:30-06:00","signal_level":100,"location":{"lat":24.799318,"lng":-107.480665},"heading":0,"speed":0,"alt":35},"connection_status":"active","movement_status":"parked","movement_status_update":"2025-10-08T14:31:30-06:00","ignition":false,"ignition_update":"2025-10-08T14:26:30-06:00","inputs":[false,false,false,true],"inputs_update":"2025-10-08T18:26:30-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:26:30-06:00","last_update":"2025-10-08T18:26:31-06:00","gsm":{"updated":"2025-10-08T18:26:30-06:00","signal_level":67,"network_name":"TelCel/America Movil","roaming":null},"battery_level":50,"battery_update":"2025-10-08T18:26:30-06:00","additional":{"sub_event_code":{"value":"12_3","updated":"2025-10-08T14:28:16-06:00"},"moving":{"value":"0","updated":"2025-10-08T18:26:30-06:00"},"event_code":{"value":"12","updated":"2025-10-08T14:28:16-06:00"},"stt_mode":{"value":"0","updated":"2025-10-08T18:26:30-06:00"}},"actual_track_update":"2025-10-08T14:31:30-06:00"},"type":"source_state_event"},{"state":{"source_id":10433901,"gps":{"updated":"2025-10-08T18:29:42-06:00","signal_level":100,"location":{"lat":20.409585,"lng":-101.175762},"heading":0,"speed":0,"alt":1717},"connection_status":"active","movement_status":"parked","movement_status_update":"2025-10-08T18:24:42-06:00","ignition":false,"ignition_update":"2025-10-08T18:19:42-06:00","inputs":[false,false,false,true],"inputs_update":"2025-10-08T18:29:42-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:29:42-06:00","last_update":"2025-10-08T18:29:43-06:00","gsm":{"updated":"2025-10-08T18:29:42-06:00","signal_level":35,"network_name":"TelCel/America Movil","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:29:42-06:00","additional":{"sub_event_code":{"value":"31_2","updated":"2025-10-08T18:19:42-06:00"},"moving":{"value":"0","updated":"2025-10-08T18:29:42-06:00"},"event_code":{"value":"34","updated":"2025-10-08T18:19:42-06:00"},"stt_mode":{"value":"0","updated":"2025-10-08T18:29:42-06:00"}},"actual_track_update":"2025-10-08T18:24:42-06:00"},"type":"source_state_event"},{"state":{"source_id":10433944,"gps":{"updated":"2025-10-08T18:31:03-06:00","signal_level":100,"location":{"lat":19.599625,"lng":-102.47324},"heading":0,"speed":0,"alt":1319},"connection_status":"active","movement_status":"parked","movement_status_update":"2025-10-07T19:31:03-06:00","ignition":false,"ignition_update":"2025-10-07T19:26:03-06:00","inputs":[false,false,false,true],"inputs_update":"2025-10-08T18:31:03-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:03-06:00","last_update":"2025-10-08T18:31:05-06:00","gsm":{"updated":"2025-10-08T18:31:03-06:00","signal_level":41,"network_name":"TelCel/America Movil","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:31:03-06:00","additional":{"sub_event_code":{"value":"31_2","updated":"2025-10-07T19:26:03-06:00"},"moving":{"value":"0","updated":"2025-10-08T18:31:03-06:00"},"event_code":{"value":"34","updated":"2025-10-07T19:26:03-06:00"},"stt_mode":{"value":"0","updated":"2025-10-08T18:31:03-06:00"}},"actual_track_update":"2025-10-07T19:31:03-06:00"},"type":"source_state_event"},{"state":{"source_id":10434741,"gps":{"updated":"2025-10-08T18:31:23-06:00","signal_level":100,"location":{"lat":25.840702,"lng":-97.795672},"heading":359,"speed":79,"alt":12},"connection_status":"active","movement_status":"moving","movement_status_update":"2025-10-08T17:44:33-06:00","ignition":true,"ignition_update":"2025-10-08T17:06:46-06:00","inputs":[true,false,false,true],"inputs_update":"2025-10-08T18:31:23-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:23-06:00","last_update":"2025-10-08T18:31:24-06:00","gsm":{"updated":"2025-10-08T18:31:23-06:00","signal_level":29,"network_name":"NEXTEL","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:31:23-06:00","additional":{"sub_event_code":{"value":"29_2","updated":"2025-10-08T17:44:33-06:00"},"moving":{"value":"1","updated":"2025-10-08T18:31:23-06:00"},"event_code":{"value":"16","updated":"2025-10-08T18:10:51-06:00"},"stt_mode":{"value":"1","updated":"2025-10-08T18:31:23-06:00"}},"actual_track_update":"2025-10-08T17:44:33-06:00"},"type":"source_state_event"}],"type":"event","event":"state_batch"}
+[2025-10-08 18:31:24] info: Evento tipo: state_batch (5 elementos)
+[2025-10-08 18:31:24] info: Fuente 10433582, tracker 3437670, code: 42, sub: 42_1
+[2025-10-08 18:31:24] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 18:31:24] info: Fuente 10433901, tracker 3438269, code: 34, sub: 31_2
+[2025-10-08 18:31:24] info: Fuente 10433944, tracker 3438441, code: 34, sub: 31_2
+[2025-10-08 18:31:24] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:31:24] info: Mensaje directo websocket: {"data":[{"tracker_id":3435108,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4628240,"value":12.93,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:26:30-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:26:30-06:00"},{"field":"input_status","value":8,"update_time":"2025-10-08T18:26:30-06:00"}],"virtual_sensors":[],"counters":[{"type":"odometer","value":56509.30133526166,"update_time":"2025-10-08T18:21:30-06:00"},{"type":"engine_hours","value":35.55039416666667,"update_time":"2025-10-08T16:36:31-06:00"}],"timestamp":"2025-10-08T18:31:24-06:00","type":"readings_event"},{"tracker_id":3437670,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4638553,"value":13.93,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T17:27:04-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T17:27:04-06:00"},{"field":"input_status","value":9,"update_time":"2025-10-08T17:27:04-06:00"}],"virtual_sensors":[],"counters":[{"type":"odometer","value":93809.68311903927,"update_time":"2025-10-08T17:25:56-06:00"},{"type":"engine_hours","value":64.9919477777778,"update_time":"2025-10-08T16:39:48-06:00"}],"timestamp":"2025-10-08T18:31:24-06:00","type":"readings_event"},{"tracker_id":3438269,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4640711,"value":12.96,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:29:42-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:29:42-06:00"},{"field":"input_status","value":8,"update_time":"2025-10-08T18:29:42-06:00"}],"virtual_sensors":[],"counters":[{"type":"odometer","value":99571.39125467843,"update_time":"2025-10-08T18:17:14-06:00"},{"type":"engine_hours","value":69.65572027777777,"update_time":"2025-10-08T16:35:10-06:00"}],"timestamp":"2025-10-08T18:31:24-06:00","type":"readings_event"},{"tracker_id":3440271,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4647605,"value":13.79,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:23-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:23-06:00"},{"field":"input_status","value":9,"update_time":"2025-10-08T18:31:23-06:00"}],"virtual_sensors":[],"counters":[{"type":"odometer","value":98030.71230425285,"update_time":"2025-10-08T18:31:13-06:00"},{"type":"engine_hours","value":47.592992499999994,"update_time":"2025-10-08T16:37:09-06:00"}],"timestamp":"2025-10-08T18:31:24-06:00","type":"readings_event"},{"tracker_id":3438441,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4640920,"value":12.56,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:03-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:03-06:00"},{"field":"input_status","value":8,"update_time":"2025-10-08T18:31:03-06:00"}],"virtual_sensors":[],"counters":[{"type":"odometer","value":18827.612751965782,"update_time":"2025-10-08T18:21:03-06:00"},{"type":"engine_hours","value":31.457081111111112,"update_time":"2025-10-08T16:36:05-06:00"}],"timestamp":"2025-10-08T18:31:24-06:00","type":"readings_event"}],"type":"event","event":"readings_batch"}
+[2025-10-08 18:31:24] info: Evento tipo: readings_batch (5 elementos)
+[2025-10-08 18:31:29] info: Mensaje directo websocket: {"data":[{"tracker_id":3440271,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4647605,"value":13.79,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:28-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:28-06:00"},{"field":"input_status","value":9,"update_time":"2025-10-08T18:31:28-06:00"}],"virtual_sensors":[],"counters":[],"timestamp":"2025-10-08T18:31:29-06:00","type":"readings_event"}],"type":"event","event":"readings_batch"}
+[2025-10-08 18:31:29] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:31:29] info: Mensaje directo websocket: {"data":[{"state":{"source_id":10434741,"gps":{"updated":"2025-10-08T18:31:28-06:00","signal_level":100,"location":{"lat":25.841693,"lng":-97.795668},"heading":358,"speed":79,"alt":10},"connection_status":"active","movement_status":"moving","movement_status_update":"2025-10-08T17:44:33-06:00","ignition":true,"ignition_update":"2025-10-08T17:06:46-06:00","inputs":[true,false,false,true],"inputs_update":"2025-10-08T18:31:28-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:28-06:00","last_update":"2025-10-08T18:31:29-06:00","gsm":{"updated":"2025-10-08T18:31:28-06:00","signal_level":32,"network_name":"NEXTEL","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:31:28-06:00","additional":{"sub_event_code":{"value":"29_2","updated":"2025-10-08T17:44:33-06:00"},"moving":{"value":"1","updated":"2025-10-08T18:31:28-06:00"},"event_code":{"value":"16","updated":"2025-10-08T18:10:51-06:00"},"stt_mode":{"value":"1","updated":"2025-10-08T18:31:28-06:00"}},"actual_track_update":"2025-10-08T17:44:33-06:00"},"type":"source_state_event"}],"type":"event","event":"state_batch"}
+[2025-10-08 18:31:29] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:31:29] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:31:34] info: Mensaje directo websocket: {"data":[{"tracker_id":3435108,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4628240,"value":12.93,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:30-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:30-06:00"},{"field":"input_status","value":8,"update_time":"2025-10-08T18:31:30-06:00"}],"virtual_sensors":[],"counters":[],"timestamp":"2025-10-08T18:31:34-06:00","type":"readings_event"},{"tracker_id":3440271,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4647605,"value":13.77,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:33-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:33-06:00"},{"field":"input_status","value":9,"update_time":"2025-10-08T18:31:33-06:00"}],"virtual_sensors":[],"counters":[],"timestamp":"2025-10-08T18:31:34-06:00","type":"readings_event"}],"type":"event","event":"readings_batch"}
+[2025-10-08 18:31:34] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:31:34] info: Mensaje directo websocket: {"data":[{"state":{"source_id":10432208,"gps":{"updated":"2025-10-08T18:31:30-06:00","signal_level":100,"location":{"lat":24.799318,"lng":-107.480665},"heading":0,"speed":0,"alt":35},"connection_status":"active","movement_status":"parked","movement_status_update":"2025-10-08T14:31:30-06:00","ignition":false,"ignition_update":"2025-10-08T14:26:30-06:00","inputs":[false,false,false,true],"inputs_update":"2025-10-08T18:31:30-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:30-06:00","last_update":"2025-10-08T18:31:31-06:00","gsm":{"updated":"2025-10-08T18:31:30-06:00","signal_level":64,"network_name":"TelCel/America Movil","roaming":null},"battery_level":50,"battery_update":"2025-10-08T18:31:30-06:00","additional":{"sub_event_code":{"value":"12_3","updated":"2025-10-08T14:28:16-06:00"},"moving":{"value":"0","updated":"2025-10-08T18:31:30-06:00"},"event_code":{"value":"12","updated":"2025-10-08T14:28:16-06:00"},"stt_mode":{"value":"0","updated":"2025-10-08T18:31:30-06:00"}},"actual_track_update":"2025-10-08T14:31:30-06:00"},"type":"source_state_event"},{"state":{"source_id":10434741,"gps":{"updated":"2025-10-08T18:31:33-06:00","signal_level":100,"location":{"lat":25.842722,"lng":-97.795682},"heading":0,"speed":82,"alt":12},"connection_status":"active","movement_status":"moving","movement_status_update":"2025-10-08T17:44:33-06:00","ignition":true,"ignition_update":"2025-10-08T17:06:46-06:00","inputs":[true,false,false,true],"inputs_update":"2025-10-08T18:31:33-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:33-06:00","last_update":"2025-10-08T18:31:34-06:00","gsm":{"updated":"2025-10-08T18:31:33-06:00","signal_level":25,"network_name":"NEXTEL","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:31:33-06:00","additional":{"sub_event_code":{"value":"29_2","updated":"2025-10-08T17:44:33-06:00"},"moving":{"value":"1","updated":"2025-10-08T18:31:33-06:00"},"event_code":{"value":"16","updated":"2025-10-08T18:10:51-06:00"},"stt_mode":{"value":"1","updated":"2025-10-08T18:31:33-06:00"}},"actual_track_update":"2025-10-08T17:44:33-06:00"},"type":"source_state_event"}],"type":"event","event":"state_batch"}
+[2025-10-08 18:31:34] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:31:34] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 18:31:34] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:31:44] info: Mensaje directo websocket: {"data":[{"tracker_id":3440271,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4647605,"value":13.82,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:43-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:43-06:00"},{"field":"input_status","value":9,"update_time":"2025-10-08T18:31:43-06:00"}],"virtual_sensors":[],"counters":[],"timestamp":"2025-10-08T18:31:44-06:00","type":"readings_event"}],"type":"event","event":"readings_batch"}
+[2025-10-08 18:31:44] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:31:44] info: Mensaje directo websocket: {"data":[{"state":{"source_id":10434741,"gps":{"updated":"2025-10-08T18:31:43-06:00","signal_level":100,"location":{"lat":25.844808,"lng":-97.795663},"heading":359,"speed":83,"alt":8},"connection_status":"active","movement_status":"moving","movement_status_update":"2025-10-08T17:44:33-06:00","ignition":true,"ignition_update":"2025-10-08T17:06:46-06:00","inputs":[true,false,false,true],"inputs_update":"2025-10-08T18:31:43-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:43-06:00","last_update":"2025-10-08T18:31:44-06:00","gsm":{"updated":"2025-10-08T18:31:43-06:00","signal_level":32,"network_name":"NEXTEL","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:31:43-06:00","additional":{"sub_event_code":{"value":"29_2","updated":"2025-10-08T17:44:33-06:00"},"moving":{"value":"1","updated":"2025-10-08T18:31:43-06:00"},"event_code":{"value":"16","updated":"2025-10-08T18:10:51-06:00"},"stt_mode":{"value":"1","updated":"2025-10-08T18:31:43-06:00"}},"actual_track_update":"2025-10-08T17:44:33-06:00"},"type":"source_state_event"}],"type":"event","event":"state_batch"}
+[2025-10-08 18:31:44] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:31:44] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:31:49] info: Mensaje directo websocket: {"data":[{"tracker_id":3440271,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4647605,"value":13.79,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:48-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:48-06:00"},{"field":"input_status","value":9,"update_time":"2025-10-08T18:31:48-06:00"}],"virtual_sensors":[],"counters":[],"timestamp":"2025-10-08T18:31:49-06:00","type":"readings_event"}],"type":"event","event":"readings_batch"}
+[2025-10-08 18:31:49] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:31:49] info: Mensaje directo websocket: {"data":[{"state":{"source_id":10434741,"gps":{"updated":"2025-10-08T18:31:48-06:00","signal_level":100,"location":{"lat":25.84587,"lng":-97.795685},"heading":359,"speed":85,"alt":10},"connection_status":"active","movement_status":"moving","movement_status_update":"2025-10-08T17:44:33-06:00","ignition":true,"ignition_update":"2025-10-08T17:06:46-06:00","inputs":[true,false,false,true],"inputs_update":"2025-10-08T18:31:48-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:48-06:00","last_update":"2025-10-08T18:31:49-06:00","gsm":{"updated":"2025-10-08T18:31:48-06:00","signal_level":29,"network_name":"NEXTEL","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:31:48-06:00","additional":{"sub_event_code":{"value":"29_2","updated":"2025-10-08T17:44:33-06:00"},"moving":{"value":"1","updated":"2025-10-08T18:31:48-06:00"},"event_code":{"value":"16","updated":"2025-10-08T18:10:51-06:00"},"stt_mode":{"value":"1","updated":"2025-10-08T18:31:48-06:00"}},"actual_track_update":"2025-10-08T17:44:33-06:00"},"type":"source_state_event"}],"type":"event","event":"state_batch"}
+[2025-10-08 18:31:49] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:31:49] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:31:54] info: Mensaje directo websocket: {"data":[{"tracker_id":3440271,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4647605,"value":13.79,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:53-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:53-06:00"},{"field":"input_status","value":9,"update_time":"2025-10-08T18:31:53-06:00"}],"virtual_sensors":[],"counters":[],"timestamp":"2025-10-08T18:31:54-06:00","type":"readings_event"}],"type":"event","event":"readings_batch"}
+[2025-10-08 18:31:54] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:31:54] info: Mensaje directo websocket: {"data":[{"state":{"source_id":10434741,"gps":{"updated":"2025-10-08T18:31:53-06:00","signal_level":100,"location":{"lat":25.846947,"lng":-97.795698},"heading":0,"speed":88,"alt":9},"connection_status":"active","movement_status":"moving","movement_status_update":"2025-10-08T17:44:33-06:00","ignition":true,"ignition_update":"2025-10-08T17:06:46-06:00","inputs":[true,false,false,true],"inputs_update":"2025-10-08T18:31:53-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:53-06:00","last_update":"2025-10-08T18:31:54-06:00","gsm":{"updated":"2025-10-08T18:31:53-06:00","signal_level":29,"network_name":"NEXTEL","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:31:53-06:00","additional":{"sub_event_code":{"value":"29_2","updated":"2025-10-08T17:44:33-06:00"},"moving":{"value":"1","updated":"2025-10-08T18:31:53-06:00"},"event_code":{"value":"16","updated":"2025-10-08T18:10:51-06:00"},"stt_mode":{"value":"1","updated":"2025-10-08T18:31:53-06:00"}},"actual_track_update":"2025-10-08T17:44:33-06:00"},"type":"source_state_event"}],"type":"event","event":"state_batch"}
+[2025-10-08 18:31:54] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:31:54] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:31:59] info: Mensaje directo websocket: {"data":[{"tracker_id":3440271,"inputs":[{"label":"Alimentación de la tarjeta","units":"","name":"board_voltage","type":"power","sensor_id":4647605,"value":13.82,"units_type":"volt","converted_units_type":null,"converted_value":null,"update_time":"2025-10-08T18:31:58-06:00"}],"states":[{"field":"output_status","value":0,"update_time":"2025-10-08T18:31:58-06:00"},{"field":"input_status","value":9,"update_time":"2025-10-08T18:31:58-06:00"}],"virtual_sensors":[],"counters":[],"timestamp":"2025-10-08T18:31:59-06:00","type":"readings_event"}],"type":"event","event":"readings_batch"}
+[2025-10-08 18:31:59] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:31:59] info: Mensaje directo websocket: {"data":[{"state":{"source_id":10434741,"gps":{"updated":"2025-10-08T18:31:58-06:00","signal_level":100,"location":{"lat":25.847993,"lng":-97.795697},"heading":359,"speed":82,"alt":9},"connection_status":"active","movement_status":"moving","movement_status_update":"2025-10-08T17:44:33-06:00","ignition":true,"ignition_update":"2025-10-08T17:06:46-06:00","inputs":[true,false,false,true],"inputs_update":"2025-10-08T18:31:58-06:00","outputs":[false,false,false],"outputs_update":"2025-10-08T18:31:58-06:00","last_update":"2025-10-08T18:31:59-06:00","gsm":{"updated":"2025-10-08T18:31:58-06:00","signal_level":29,"network_name":"NEXTEL","roaming":null},"battery_level":66,"battery_update":"2025-10-08T18:31:58-06:00","additional":{"sub_event_code":{"value":"29_2","updated":"2025-10-08T17:44:33-06:00"},"moving":{"value":"1","updated":"2025-10-08T18:31:58-06:00"},"event_code":{"value":"16","updated":"2025-10-08T18:10:51-06:00"},"stt_mode":{"value":"1","updated":"2025-10-08T18:31:58-06:00"}},"actual_track_update":"2025-10-08T17:44:33-06:00"},"type":"source_state_event"}],"type":"event","event":"state_batch"}
+[2025-10-08 18:31:59] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:31:59] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:37:49] info: 🔌 Iniciando conexión WebSocket con Navixy...
+[2025-10-08 18:37:58] info: Mapeo source->tracker cargado: 5 elementos
+[2025-10-08 18:37:58] info: Lista de trackers mapeados:
+[2025-10-08 18:37:58] info: Source ID: 10432208 → Tracker ID: 3435108
+[2025-10-08 18:37:58] info: Source ID: 10433582 → Tracker ID: 3437670
+[2025-10-08 18:37:58] info: Source ID: 10433901 → Tracker ID: 3438269
+[2025-10-08 18:37:58] info: Source ID: 10433944 → Tracker ID: 3438441
+[2025-10-08 18:37:58] info: Source ID: 10434741 → Tracker ID: 3440271
+[2025-10-08 18:37:58] info: Conectando WebSocket a: wss://www.flotaobd2.com/api-v2/wse/subscription?X-Atmosphere-tracking-id=0&X-Atmosphere-Framework=4.0.0&X-Atmosphere-Transport=websocket&Content-Type=application/json&X-atmo-protocol=true
+[2025-10-08 18:37:58] info: WebSocket conectado
+[2025-10-08 18:38:06] info: Suscripción enviada con hash: 199543787aac6ab51c431cebbf5bbc28
+[2025-10-08 18:38:06] info: Evento tipo: state_batch (5 elementos)
+[2025-10-08 18:38:06] info: Fuente 10433582, tracker 3437670, code: 42, sub: 42_1
+[2025-10-08 18:38:06] info: Fuente 10433901, tracker 3438269, code: 34, sub: 31_2
+[2025-10-08 18:38:06] info: Fuente 10433944, tracker 3438441, code: 34, sub: 31_2
+[2025-10-08 18:38:06] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 18:38:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:38:06] info: Evento tipo: readings_batch (5 elementos)
+[2025-10-08 18:38:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:38:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:38:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:38:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:38:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:38:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:38:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:38:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:38:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:38:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:38:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:38:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:38:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:38:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:38:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:39:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:39:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:39:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:39:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:39:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:39:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:39:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:39:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:39:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:39:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:39:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:39:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:39:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:39:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:46] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:39:46] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:39:46] info: Fuente 10433901, tracker 3438269, code: 34, sub: 31_2
+[2025-10-08 18:39:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:39:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:39:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:39:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:40:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:40:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:40:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:06] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:41:06] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:41:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:06] info: Fuente 10433944, tracker 3438441, code: 34, sub: 31_2
+[2025-10-08 18:41:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:41:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:41:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:41:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:41:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:41:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:41:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:41:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:41:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:41:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:41:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:36] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:41:36] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:41:36] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 18:41:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:41:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:41:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:41:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:41:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:41:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:41:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:56] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:41:56] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:41:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:41:56] info: Fuente 10433582, tracker 3437670, code: 42, sub: 42_1
+[2025-10-08 18:42:01] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:42:01] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:42:01] info: Fuente 10433582, tracker 3437670, code: 42, sub: 42_1
+[2025-10-08 18:42:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:06] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:42:06] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:42:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:06] info: Fuente 10433582, tracker 3437670, code: 42, sub: 42_1
+[2025-10-08 18:42:11] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:42:11] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:42:11] info: Fuente 10433582, tracker 3437670, code: 42, sub: 42_1
+[2025-10-08 18:42:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:42:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:42:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:21] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:42:21] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:42:21] info: Fuente 10433582, tracker 3437670, code: 42, sub: 42_1
+[2025-10-08 18:42:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:42:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:42:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:42:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:42:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:36] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:42:36] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:42:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:36] info: Fuente 10433582, tracker 3437670, code: 11, sub: 11_3
+[2025-10-08 18:42:41] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:42:41] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:42:41] info: Fuente 10433582, tracker 3437670, code: 34, sub: 31_2
+[2025-10-08 18:42:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:42:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:42:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:51] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:42:51] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:42:51] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:42:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:42:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:42:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:42:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:43:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:43:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:06] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:43:06] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:43:06] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:43:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:43:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:43:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:43:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:43:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:21] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:43:21] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:43:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:21] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:43:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:43:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:43:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:43:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:43:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:36] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:43:36] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:43:36] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:43:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:43:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:43:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:46] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:43:46] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:43:46] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:43:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:43:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:43:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:56] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:43:56] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:43:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:43:56] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:44:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:11] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:44:11] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:44:11] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:44:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:26] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:44:26] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:44:26] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:44:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:31] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:44:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:46] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:44:46] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:44:46] info: Fuente 10433901, tracker 3438269, code: 34, sub: 31_2
+[2025-10-08 18:44:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:44:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:44:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:44:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:45:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:45:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:45:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:45:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:45:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:45:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:45:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:45:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:31] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:45:31] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:45:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:31] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:45:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:45:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:45:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:45:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:45:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:45:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:45:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:45:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:45:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:45:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:46:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:46:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:06] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:46:06] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:46:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:06] info: Fuente 10433944, tracker 3438441, code: 34, sub: 31_2
+[2025-10-08 18:46:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:46:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:46:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:46:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:46:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:31] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:46:31] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:46:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:31] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 18:46:36] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:46:36] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:46:36] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 18:46:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:46:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:46:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:46:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:46:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:46:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:46:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:46:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:47:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:47:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:47:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:48:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:48:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:48:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:46] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:49:46] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:49:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:46] info: Fuente 10433901, tracker 3438269, code: 34, sub: 31_2
+[2025-10-08 18:49:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:49:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:49:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:49:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:26] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:50:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:36] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:50:36] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:50:36] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:50:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:50:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:50:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:50:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:06] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:51:06] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:51:06] info: Fuente 10433944, tracker 3438441, code: 34, sub: 31_2
+[2025-10-08 18:51:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:36] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:51:36] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:51:36] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 18:51:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:51:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:51:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:51:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:52:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:52:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:52:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:53:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:53:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:53:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:31] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:31] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:46] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:54:46] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:54:46] info: Fuente 10433901, tracker 3438269, code: 34, sub: 31_2
+[2025-10-08 18:54:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:54:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:54:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:54:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:06] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:06] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:31] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:55:31] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:55:31] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:55:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:36] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:55:36] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:55:36] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 18:55:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:55:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:55:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:55:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:06] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:56:06] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:56:06] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:06] info: Fuente 10433944, tracker 3438441, code: 34, sub: 31_2
+[2025-10-08 18:56:11] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:11] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:11] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:16] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:16] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:16] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:21] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:21] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:21] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:26] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:26] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:26] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:31] info: Evento tipo: readings_batch (2 elementos)
+[2025-10-08 18:56:31] info: Evento tipo: state_batch (2 elementos)
+[2025-10-08 18:56:31] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:31] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 18:56:36] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:36] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:36] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:41] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:41] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:41] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:46] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:46] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:46] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:51] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:51] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:51] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:56:56] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:56:56] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:56:56] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 18:57:01] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 18:57:01] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 18:57:01] info: Fuente 10434741, tracker 3440271, code: 16, sub: 29_2
+[2025-10-08 19:16:07] info: 🔌 Iniciando conexión WebSocket con Navixy...
+[2025-10-08 19:16:16] info: Mapeo source->tracker cargado: 5 elementos
+[2025-10-08 19:16:16] info: Source ID: 10432208 → Tracker ID: 3435108
+[2025-10-08 19:16:16] info: Source ID: 10433582 → Tracker ID: 3437670
+[2025-10-08 19:16:16] info: Source ID: 10433901 → Tracker ID: 3438269
+[2025-10-08 19:16:16] info: Source ID: 10433944 → Tracker ID: 3438441
+[2025-10-08 19:16:16] info: Source ID: 10434741 → Tracker ID: 3440271
+[2025-10-08 19:16:16] info: Conectando WebSocket a: wss://www.flotaobd2.com/api-v2/wse/subscription?X-Atmosphere-tracking-id=0&X-Atmosphere-Framework=4.0.0&X-Atmosphere-Transport=websocket&Content-Type=application/json&X-atmo-protocol=true
+[2025-10-08 19:16:16] info: WebSocket conectado
+[2025-10-08 19:16:24] info: Suscripción enviada con hash: b1a8138a306eb12eae1d59bf4e8c861d
+[2025-10-08 19:16:24] info: Evento tipo: state_batch (5 elementos)
+[2025-10-08 19:16:24] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 19:16:24] info: Fuente 10433901, tracker 3438269, code: 34, sub: 31_2
+[2025-10-08 19:16:24] info: Fuente 10433582, tracker 3437670, code: 12, sub: 12_3
+[2025-10-08 19:16:24] info: Fuente 10433944, tracker 3438441, code: 34, sub: 31_2
+[2025-10-08 19:16:24] info: Fuente 10434741, tracker 3440271, code: 12, sub: 12_3
+[2025-10-08 19:16:24] info: Evento tipo: readings_batch (5 elementos)
+[2025-10-08 19:16:34] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 19:16:34] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 19:16:34] info: Fuente 10432208, tracker 3435108, code: 12, sub: 12_3
+[2025-10-08 19:16:54] info: Evento tipo: readings_batch (1 elementos)
+[2025-10-08 19:16:54] info: Evento tipo: state_batch (1 elementos)
+[2025-10-08 19:16:54] info: Fuente 10434741, tracker 3440271, code: 12, sub: 12_3
