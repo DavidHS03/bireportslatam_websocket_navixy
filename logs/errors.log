@@ -1,0 +1,26 @@
+[2025-10-07 18:02:45] error: Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:02:50] error: Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:02:56] error: Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:03:01] error: Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:03:07] error: Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:03:12] error: Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:03:18] error: Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:10:27] error: Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:12:42] error: ❌ Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:12:48] error: ❌ Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:12:53] error: ❌ Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:15:17] error: ❌ Error en WebSocket: Unexpected server response: 400
+[2025-10-07 18:24:15] error: ❌ Error parseando mensaje: Unexpected token b in JSON at position 0
+[2025-10-07 18:24:21] error: ❌ Error parseando mensaje: Unexpected token c in JSON at position 0
+[2025-10-07 18:24:26] error: ❌ Error parseando mensaje: Unexpected token c in JSON at position 0
+[2025-10-07 18:33:39] error: ❌ Error parseando mensaje: Unexpected token d in JSON at position 1
+[2025-10-07 18:34:04] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 18:34:29] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 18:34:54] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 18:35:19] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 18:35:44] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 18:36:09] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 18:36:34] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 18:36:59] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 18:37:24] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
+[2025-10-07 19:38:47] error: ❌ Error construyendo mapeo source→tracker: getTrackerListWithSources is not a function
