@@ -5,7 +5,7 @@ const { logNavixyEvent } = require('../db/database');
 const axios = require('axios');
 const { sendWhatsAppTemplate } = require('../services/whatsappService');
 const dayjs = require('dayjs');
-require('dayjs/locale/es'); // idioma español
+require('dayjs/locale/es');
 dayjs.locale('es');
 
 const COMPANY_ID = 31;
@@ -18,6 +18,12 @@ const SOS_EVENT_CODE = '83';
 const eventNamesMap = {
   '83': 'Botón de pánico'
 };
+
+// Lista de contactos que recibirán la alerta
+const ALERT_RECIPIENTS = [
+  { number: '5212227086105', contactName: 'David Hernández', companyName: 'DLA' },
+  { number: '5219933085878', contactName: 'Alexander Hidalgo', companyName: 'DLA' }
+];
 
 async function buildSourceTrackerMap() {
   const hash = await getAuthHash();
@@ -143,13 +149,17 @@ async function handleEvent(msg) {
 
           logger.info(`Evento SOS guardado correctamente para tracker ${trackerId} (${label})`);
 
-          await sendWhatsAppTemplate(
-            '5212227086105',
-            'David Hernández',
-            label,
-            coords,
-            eventDate
-          );
+          // Enviar el mismo template a todos los destinatarios
+          for (const contact of ALERT_RECIPIENTS) {
+            await sendWhatsAppTemplate(
+              contact.number,
+              contact.contactName,
+              label,
+              coords,
+              eventDate
+            );
+            logger.info(`Template enviado a ${contact.contactName} (${contact.number})`);
+          }
         } catch (err) {
           logger.error(`Error al procesar evento SOS: ${err.message}`);
         }
