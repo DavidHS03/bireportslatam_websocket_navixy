@@ -24,3 +24,112 @@
 [2025-10-07 18:36:59] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
 [2025-10-07 18:37:24] error: ❌ Error parseando mensaje: Unexpected token X in JSON at position 0
 [2025-10-07 19:38:47] error: ❌ Error construyendo mapeo source→tracker: getTrackerListWithSources is not a function
+[2025-10-08 21:35:55] error: Error mapeo source->tracker: getaddrinfo ENOTFOUND api.eu.navixy.com
+[2025-10-08 21:35:55] error: Error WebSocket: getaddrinfo ENOTFOUND www.flotaobd2.com
+[2025-10-08 21:36:00] error: Error mapeo source->tracker: getaddrinfo ENOTFOUND api.eu.navixy.com
+[2025-10-08 21:36:00] error: Error WebSocket: getaddrinfo ENOTFOUND www.flotaobd2.com
+[2025-10-08 21:47:02] error: Error mapeo source->tracker: getaddrinfo ENOTFOUND api.eu.navixy.com
+[2025-10-08 21:47:02] error: Error WebSocket: getaddrinfo ENOTFOUND www.flotaobd2.com
+[2025-10-08 21:47:07] error: Error mapeo source->tracker: getaddrinfo ENOTFOUND api.eu.navixy.com
+[2025-10-08 21:47:07] error: Error WebSocket: getaddrinfo ENOTFOUND www.flotaobd2.com
+[2025-10-08 22:15:42] error: Error mapeo source->tracker: getaddrinfo ENOTFOUND api.eu.navixy.com
+[2025-10-08 22:15:42] error: Error WebSocket: getaddrinfo ENOTFOUND www.flotaobd2.com
+[2025-10-08 22:15:47] error: Error mapeo source->tracker: getaddrinfo ENOTFOUND api.eu.navixy.com
+[2025-10-08 22:15:47] error: Error WebSocket: getaddrinfo ENOTFOUND www.flotaobd2.com
+[2025-10-08 22:34:36] error: Error mapeo source->tracker: getaddrinfo ENOTFOUND api.eu.navixy.com
+[2025-10-08 22:34:36] error: Error WebSocket: getaddrinfo ENOTFOUND www.flotaobd2.com
+[2025-10-09 06:28:51] error: Error durante la suscripción: read ETIMEDOUT
+[2025-10-09 10:13:21] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:13:21] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:23:45] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:23:45] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:23:53] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:23:54] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:02] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:02] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:11] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:11] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:19] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:20] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:27] error: Error procesando evento Botón de pánico: read ETIMEDOUT
+[2025-10-09 10:24:30] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:31] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:40] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:40] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:50] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:50] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:58] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:24:59] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:10] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:10] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:18] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:18] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:30] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:30] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:40] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:40] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:50] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:50] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:58] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:25:59] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:07] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:07] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:16] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:16] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:25] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:25] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:35] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:35] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:45] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:45] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:55] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:26:55] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:05] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:05] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:15] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:15] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:23] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:23] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:32] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:32] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:41] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:41] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:49] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:49] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:58] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:27:58] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:28:06] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:28:07] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:10] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:10] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:18] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:19] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:27] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:27] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:36] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:36] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:44] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:44] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:53] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:30:53] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:31:15] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:31:15] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:31:30] error: ❌ Error enviando WhatsApp a 5212227086105: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 10:31:30] error: ❌ Error enviando WhatsApp a 5219933085878: (#132000) Number of parameters does not match the expected number of params
+[2025-10-09 11:15:04] error: Error procesando evento Botón de pánico: read ETIMEDOUT
+[2025-10-09 11:17:20] error: ❌ Error enviando WhatsApp a 5212227086105: Converting circular structure to JSON
+    --> starting at object with constructor 'ClientRequest'
+    |     property 'socket' -> object with constructor 'TLSSocket'
+    --- property '_httpMessage' closes the circle
+[2025-10-09 11:17:21] error: ❌ Error enviando WhatsApp a 5219933085878: Converting circular structure to JSON
+    --> starting at object with constructor 'ClientRequest'
+    |     property 'socket' -> object with constructor 'TLSSocket'
+    --- property '_httpMessage' closes the circle
+[2025-10-09 11:19:24] error: ❌ Error enviando WhatsApp a 5212227086105: Converting circular structure to JSON
+    --> starting at object with constructor 'ClientRequest'
+    |     property 'socket' -> object with constructor 'TLSSocket'
+    --- property '_httpMessage' closes the circle
+[2025-10-09 11:19:24] error: ❌ Error enviando WhatsApp a 5219933085878: Converting circular structure to JSON
+    --> starting at object with constructor 'ClientRequest'
+    |     property 'socket' -> object with constructor 'TLSSocket'
+    --- property '_httpMessage' closes the circle
