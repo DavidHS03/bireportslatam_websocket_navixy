@@ -1,0 +1,68 @@
+# ============================================
+# 🌱 ARCHIVO .gitignore para proyecto Node.js
+# ============================================
+
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de entorno
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# Logs y errores
+logs/
+*.log
+pm2.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Archivos de cobertura / pruebas
+coverage/
+.nyc_output/
+lib-cov/
+
+# Archivos compilados o generados
+dist/
+build/
+.tmp/
+.cache/
+.idea/
+.vscode/
+*.bak
+
+# Archivos de base de datos locales
+db/*.sqlite
+db/*.db
+*.sql
+
+# Archivos de servicios (por ejemplo PM2)
+ecosystem.config.js
+
+# Archivos de despliegue temporales
+*.tar.gz
+*.tgz
+*.zip
+
+# ============================================
+# Archivos específicos de tu estructura actual
+# ============================================
+# No subir logs del proyecto
+/services/logs/
+# No subir dependencias ni binarios
+/services/node_modules/
+# No subir backups o dumps
+/db/backup/
