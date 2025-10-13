@@ -11,7 +11,6 @@ dayjs.locale('es');
 const COMPANY_ID = 31;
 
 const sourceToTracker = new Map();
-const trackerActivity = new Map();
 const recentEvents = new Map();
 
 const SOS_EVENT_CODE = '42';
@@ -27,17 +26,21 @@ const ALERT_RECIPIENTS = [
 ];
 
 async function buildSourceTrackerMap() {
-  const hash = await getAuthHash();
-  const res = await getTrackerIdsWithSources(hash);
-  sourceToTracker.clear();
+  try {
+    const hash = await getAuthHash();
+    const res = await getTrackerIdsWithSources(hash);
+    sourceToTracker.clear();
 
-  res.list.forEach(tr => {
-    if (tr.source && tr.source.id != null) {
-      sourceToTracker.set(tr.source.id, tr.id);
-    }
-  });
+    res.list.forEach(tr => {
+      if (tr.source && tr.source.id != null) {
+        sourceToTracker.set(tr.source.id, tr.id);
+      }
+    });
 
-  logger.info(`Mapeo source->tracker cargado: ${sourceToTracker.size} elementos`);
+    logger.info(`✅ Mapeo source->tracker cargado (${sourceToTracker.size} elementos)`);
+  } catch (err) {
+    logger.error(`Error al construir mapa source->tracker: ${err.message}`);
+  }
 }
 
 async function getTrackerIdsWithSources(hash) {
@@ -55,12 +58,12 @@ async function subscribe(ws) {
       hash,
       iso_datetime: true,
       requests: [
-        { type: 'readings_batch', target: { type: 'all' }, rate_limit: '5s', include_components: true },
+        { type: 'readings_batch', target: { type: 'all' }, rate_limit: '5s', include_components: false },
         { type: 'state_batch', target: { type: 'all' }, rate_limit: '5s', include_components: true }
       ]
     };
     ws.send(JSON.stringify(payload));
-    logger.info(`Suscripción enviada con hash: ${hash}`);
+    logger.info(`📡 Suscripción enviada con hash: ${hash}`);
   } catch (err) {
     logger.error(`Error durante la suscripción: ${err.message}`);
   }
@@ -70,16 +73,10 @@ function extractCode(state, key) {
   return state?.[key]?.value ?? state?.additional?.[key]?.value ?? null;
 }
 
-function updateTrackerActivity(trackerId) {
-  trackerActivity.set(trackerId, new Date());
-}
-
 /**
- * Nueva lógica de duplicados:
- * 🔹 Permite múltiples eventos en el mismo segundo.
- * 🔹 Solo ignora si ocurren con diferencia < 1000 ms y misma ubicación.
+ * Evita duplicados dentro de 10 segundos y distancia mínima
  */
-function isExactDuplicate(trackerId, eventCode, lat, lng) {
+function isDuplicateEvent(trackerId, eventCode, lat, lng) {
   const key = `${trackerId}_${eventCode}`;
   const now = Date.now();
 
@@ -87,17 +84,14 @@ function isExactDuplicate(trackerId, eventCode, lat, lng) {
   if (prev) {
     const diff = now - prev.time;
     const dist = Math.abs(prev.lat - lat) + Math.abs(prev.lng - lng);
-    if (diff < 1000 && dist < 0.0001) {
-      logger.debug(`Evento exacto ignorado (${key}) dentro del mismo segundo`);
-      return true;
-    }
+    if (diff < 10000 && dist < 0.0005) return true;
   }
 
   recentEvents.set(key, { time: now, lat, lng });
   return false;
 }
 
-// Limpieza de eventos antiguos (1 minuto)
+// Limpieza cada minuto de eventos antiguos
 setInterval(() => {
   const now = Date.now();
   for (const [key, data] of recentEvents.entries()) {
@@ -105,12 +99,16 @@ setInterval(() => {
   }
 }, 60000);
 
+/**
+ * Manejo de eventos WebSocket
+ * Solo procesamos el botón de pánico (event_code 42)
+ */
 async function handleEvent(msg) {
   if (msg.type !== 'event') return;
+  const { event, data } = msg;
 
-  const event = msg.event;
-  const data = msg.data;
-  logger.info(`Evento tipo: ${event} (${data.length} elementos)`);
+  // Solo procesamos eventos "state_batch"
+  if (event !== 'state_batch' || !Array.isArray(data)) return;
 
   for (const item of data) {
     if (item.type !== 'source_state_event') continue;
@@ -120,72 +118,54 @@ async function handleEvent(msg) {
     const trackerId = sourceToTracker.get(sourceId) ?? null;
     if (!trackerId) continue;
 
-    updateTrackerActivity(trackerId);
-
     const eventCode = extractCode(state, 'event_code');
-    const subEventCode = extractCode(state, 'sub_event_code');
+    if (eventCode !== SOS_EVENT_CODE) continue;
 
-    logger.info(`Source ${sourceId}, tracker ${trackerId}, event_code: ${eventCode}, sub_event: ${subEventCode}`);
+    const lat = state.gps?.location?.lat ?? 0;
+    const lng = state.gps?.location?.lng ?? 0;
+    if (isDuplicateEvent(trackerId, eventCode, lat, lng)) continue;
 
-    if (eventCode === SOS_EVENT_CODE) {
-      const eventName = eventNamesMap[SOS_EVENT_CODE] || 'Evento desconocido';
+    const eventName = eventNamesMap[eventCode] || 'Evento desconocido';
+    logger.warn(`[🚨 DETECTADO] ${eventName} - Tracker ${trackerId}`);
 
-      const lat = state.gps?.location?.lat ?? 0;
-      const lng = state.gps?.location?.lng ?? 0;
+    try {
+      const hash = await getAuthHash();
+      const label = await getTrackerLabel(hash, trackerId);
+      const coords = `${lat},${lng}`;
+      const eventDateRaw = state.updated || new Date().toISOString();
+      const eventDate = dayjs(eventDateRaw).format('DD [de] MMMM [de] YYYY, HH:mm:ss');
 
-      if (isExactDuplicate(trackerId, eventCode, lat, lng)) continue;
+      // Guardar evento en BD
+      await logNavixyEvent({
+        companyId: COMPANY_ID,
+        trackerId,
+        sourceId,
+        eventType: event,
+        eventCode,
+        eventName,
+        payload: state
+      });
 
-      logger.warn(`[🚨 DETECTADO] ${eventName} - Tracker ${trackerId} (${sourceId})`);
+      logger.info(`💾 Botón de pánico guardado (${label})`);
 
-      try {
-        const hash = await getAuthHash();
-        const label = await getTrackerLabel(hash, trackerId);
-        const coords = `${lat},${lng}`;
-        const eventDateRaw = state.updated || new Date().toISOString();
-        const eventDate = dayjs(eventDateRaw).format('DD [de] MMMM [de] YYYY, HH:mm:ss');
-
-        // Guardar evento
-        await logNavixyEvent({
-          companyId: COMPANY_ID,
-          trackerId,
-          sourceId,
-          eventType: event,
-          eventCode,
-          subEventCode,
-          eventName,
-          payload: state
-        });
-
-        logger.info(`Evento guardado correctamente (${eventName}) para tracker ${trackerId}`);
-
-        // Enviar notificación a todos
-        for (const contact of ALERT_RECIPIENTS) {
-          await sendWhatsAppTemplate(
-            contact.number,
-            contact.contactName,
-            label,
-            eventDate,
-            coords
-          );
-          logger.info(`Mensaje enviado a ${contact.contactName} (${contact.number})`);
-        }
-
-      } catch (err) {
-        logger.error(`Error procesando evento ${eventName}: ${err.message}`);
+      // Enviar notificaciones
+      for (const contact of ALERT_RECIPIENTS) {
+        await sendWhatsAppTemplate(contact.number, contact.contactName, label, eventDate, coords);
       }
+    } catch (err) {
+      logger.error(`Error procesando evento de pánico: ${err.message}`);
     }
   }
 }
 
+/**
+ * Conexión principal WebSocket
+ */
 async function connectWebSocket() {
-  try {
-    await buildSourceTrackerMap();
-  } catch (err) {
-    logger.error(`Error al construir mapa source->tracker: ${err.message}`);
-  }
+  await buildSourceTrackerMap();
 
   const wsUrl = process.env.NAVIXY_WS_URL;
-  logger.info(`Conectando WebSocket a: ${wsUrl}`);
+  logger.info(`🔌 Conectando WebSocket a: ${wsUrl}`);
 
   const ws = new WebSocket(wsUrl, { headers: { Origin: 'https://www.flotaobd2.com' } });
 
