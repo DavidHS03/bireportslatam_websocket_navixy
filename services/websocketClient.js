@@ -20,7 +20,10 @@ const eventNamesMap = { '42': 'Botón de pánico' };
 const ALERT_RECIPIENTS = [
   { number: '5212227086105', contactName: 'David Hernández', companyName: 'DLA' },
   { number: '5219933085878', contactName: 'Alexander Hidalgo', companyName: 'DLA' },
-  { number: '5215544544345', contactName: 'Jose Marsal', companyName: 'DLA' }
+  { number: '5215544544345', contactName: 'Jose Marsal', companyName: 'DLA' },
+  { number: '5212229228568', contactName: 'JP', companyName: 'DLA' },
+  { number: '5215554065207', contactName: '-', companyName: 'Syngenta' },
+  { number: '5491124672697', contactName: '-', companyName: 'Syngenta' }
 ];
 
 async function buildSourceTrackerMap() {
