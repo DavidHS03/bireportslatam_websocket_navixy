@@ -8,27 +8,32 @@ const {
   sendWhatsAppTemplateOverspeed,
   sendWhatsAppTemplatePowerCut
 } = require('../services/whatsappService');
+
 const dayjs = require('dayjs');
 require('dayjs/locale/es');
+const utc = require('dayjs/plugin/utc');
+const timezone = require('dayjs/plugin/timezone');
+dayjs.extend(utc);
+dayjs.extend(timezone);
 dayjs.locale('es');
 
 const COMPANY_ID = 31;
 const sourceToTracker = new Map();
 const recentEvents = new Map();
 
-// 🔹 Códigos de eventos
+// Códigos de eventos
 const SOS_EVENT_CODE = '42';
-const OVERSPEED_EVENT_CODE = '34';
+const OVERSPEED_EVENT_CODE = '33'; 
 const POWER_CUT_EVENT_CODE = '12';
 
-// 🔹 Nombres descriptivos
+// Capacidades descriptivas
 const eventNamesMap = {
   '42': 'Botón de pánico',
-  '34': 'Exceso de velocidad',
+  '33': 'Exceso de velocidad',
   '12': 'Corte de energía (Paro de motor)'
 };
 
-// 🔹 Contactos para alertas
+// Contactos para alertas
 const ALERT_RECIPIENTS = [
   { number: '5212227086105', contactName: 'David Hernández', companyName: 'DLA' },
   { number: '5219933085878', contactName: 'Alexander Hidalgo', companyName: 'DLA' },
@@ -58,7 +63,9 @@ async function buildSourceTrackerMap() {
 async function getTrackerIdsWithSources(hash) {
   const API = process.env.NAVIXY_API_URL;
   const resp = await axios.post(`${API}/v2/tracker/list`, { hash });
-  if (resp.data.success && Array.isArray(resp.data.list)) return resp.data;
+  if (resp.data.success && Array.isArray(resp.data.list)) {
+    return resp.data;
+  }
   throw new Error('Error obteniendo trackers con fuentes');
 }
 
@@ -70,7 +77,7 @@ async function subscribe(ws) {
       hash,
       iso_datetime: true,
       requests: [
-        { type: 'readings_batch', target: { type: 'all' }, rate_limit: '5s', include_components: false },
+        { type: 'readings_batch', target: { type: 'all' }, rate_limit: '5s' },
         { type: 'state_batch', target: { type: 'all' }, rate_limit: '5s', include_components: true }
       ]
     };
@@ -82,13 +89,28 @@ async function subscribe(ws) {
 }
 
 // ========================================================
-// 🧩 Utilidades
+//  Utilidades
 // ========================================================
 
+/**
+ * Extrae el valor de una propiedad adicional o state.
+ * @param {object} state – objeto state del evento.
+ * @param {string} key – clave buscada.
+ * @returns {string|null} valor o null.
+ */
 function extractCode(state, key) {
-  return state?.[key]?.value ?? state?.additional?.[key]?.value ?? null;
+  return (state?.[key]?.value) ?? (state?.additional?.[key]?.value) ?? null;
 }
 
+/**
+ * Determina si un evento con trackerId y eventCode ya fue procesado recientemente
+ * para evitar duplicados.
+ * @param {string|number} trackerId
+ * @param {string} eventCode
+ * @param {number} lat
+ * @param {number} lng
+ * @returns {boolean} true si es duplicado y debe ignorarse.
+ */
 function isDuplicateEvent(trackerId, eventCode, lat, lng) {
   const key = `${trackerId}_${eventCode}`;
   const now = Date.now();
@@ -96,7 +118,9 @@ function isDuplicateEvent(trackerId, eventCode, lat, lng) {
   if (prev) {
     const diff = now - prev.time;
     const dist = Math.abs(prev.lat - lat) + Math.abs(prev.lng - lng);
-    if (diff < 10000 && dist < 0.0005) return true; // evita duplicados en 10s
+    if (diff < 10000 && dist < 0.0005) { // 10 segundos y poca distancia
+      return true;
+    }
   }
   recentEvents.set(key, { time: now, lat, lng });
   return false;
@@ -106,18 +130,19 @@ function isDuplicateEvent(trackerId, eventCode, lat, lng) {
 setInterval(() => {
   const now = Date.now();
   for (const [key, data] of recentEvents.entries()) {
-    if (now - data.time > 60000) recentEvents.delete(key);
+    if (now - data.time > 60000) { // eventos más antiguos de 1 minuto
+      recentEvents.delete(key);
+    }
   }
 }, 60000);
 
 // ========================================================
-// 🚨 Manejo de eventos WebSocket
+// Manejo de eventos WebSocket
 // ========================================================
 
 async function handleEvent(msg) {
   if (msg.type !== 'event') return;
   const { event, data } = msg;
-
   if (event !== 'state_batch' || !Array.isArray(data)) return;
 
   for (const item of data) {
@@ -136,20 +161,27 @@ async function handleEvent(msg) {
     const lng = state.gps?.location?.lng ?? 0;
     if (isDuplicateEvent(trackerId, eventCode, lat, lng)) continue;
 
-    // Formatear datos comunes
     const speed = state.gps?.speed ?? 0;
     const battery = state.battery_level ?? 'N/D';
     const ignition = state.ignition ?? 'N/D';
-    const eventDate = dayjs(state.updated || new Date()).format('DD [de] MMMM [de] YYYY, HH:mm:ss');
+    const eventDate = dayjs(state.updated || new Date())
+      .tz('America/Mexico_City')
+      .format('DD [de] MMMM [de] YYYY, HH:mm:ss');
 
-    // Determinar tipo de evento
     let templateFn = null;
     let eventName = '';
+
     if (eventCode === SOS_EVENT_CODE) {
       eventName = eventNamesMap[eventCode];
       templateFn = sendWhatsAppTemplate;
       logger.warn(`[🚨 DETECTADO] ${eventName} - Tracker ${trackerId}`);
     } else if (eventCode === OVERSPEED_EVENT_CODE) {
+      // Aquí condición de exceso de velocidad
+      const threshold = 110; // km/h
+      if (speed <= threshold) {
+        logger.info(`Velocidad (${speed} km/h) no supera umbral (${threshold} km/h). Omisión.`);
+        continue;
+      }
       eventName = eventNamesMap[eventCode];
       templateFn = sendWhatsAppTemplateOverspeed;
       logger.warn(`[💨 DETECTADO] ${eventName} - Tracker ${trackerId}`);
@@ -173,7 +205,7 @@ async function handleEvent(msg) {
         • Fecha evento: ${eventDate}
       `);
     } else {
-      continue; // ignora otros códigos
+      continue; 
     }
 
     try {
@@ -191,10 +223,13 @@ async function handleEvent(msg) {
         payload: state
       });
 
-      // Enviar alerta solo si hay función definida
       if (templateFn) {
         for (const contact of ALERT_RECIPIENTS) {
-          await templateFn(contact.number, contact.contactName, label, eventDate, coords);
+          if (eventCode === OVERSPEED_EVENT_CODE) {
+            await templateFn(contact.number, contact.contactName, label, eventDate, coords, speed);
+          } else {
+            await templateFn(contact.number, contact.contactName, label, eventDate, coords);
+          }
         }
       }
     } catch (err) {
@@ -204,13 +239,12 @@ async function handleEvent(msg) {
 }
 
 // ========================================================
-// 🌐 Conexión WebSocket
+// Conexión WebSocket
 // ========================================================
 
 async function connectWebSocket() {
   await buildSourceTrackerMap();
   const wsUrl = process.env.NAVIXY_WS_URL;
-
   logger.info(`🔌 Conectando WebSocket a: ${wsUrl}`);
 
   const ws = new WebSocket(wsUrl, { headers: { Origin: 'https://www.flotaobd2.com' } });
