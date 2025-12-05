@@ -9,8 +9,22 @@ const headers = {
   'Content-Type': 'application/json',
 };
 
-async function sendWhatsAppTemplate(number, contactName, vehicle_name, event_date, coords = null) {
+/**
+ * Envía notificación de incidentes múltiples.
+ * Variables esperadas:
+ * {{1}} vehículo
+ * {{2}} fecha
+ * {{3}}, {{4}}, {{5}} eventos
+ * botón dinámico con {{1}} = link del mapa
+ */
+async function sendWhatsAppTemplateMultipleEvents(number, vehicleName, eventDate, events = [], coords = null) {
   try {
+    const [e1, e2, e3] = [
+      events[0] || '—',
+      events[1] || '—',
+      events[2] || '—',
+    ];
+
     const components = [
       {
         type: 'header',
@@ -26,8 +40,11 @@ async function sendWhatsAppTemplate(number, contactName, vehicle_name, event_dat
       {
         type: 'body',
         parameters: [
-          { type: 'text', text: vehicle_name },
-          { type: 'text', text: event_date },
+          { type: 'text', text: vehicleName },  // {{1}}
+          { type: 'text', text: eventDate },    // {{2}}
+          { type: 'text', text: e1 },           // {{3}}
+          { type: 'text', text: e2 },           // {{4}}
+          { type: 'text', text: e3 },           // {{5}}
         ],
       },
     ];
@@ -37,75 +54,12 @@ async function sendWhatsAppTemplate(number, contactName, vehicle_name, event_dat
         type: 'button',
         sub_type: 'url',
         index: 0,
-        parameters: [{ type: 'text', text: coords }],
-      });
-    }
-
-    const body = {
-      messaging_product: 'whatsapp',
-      to: String(number),
-      type: 'template',
-      template: {
-        name: 'alerta_siniestro_2',
-        language: { code: 'es_MX' },
-        components,
-      },
-    };
-
-    const response = await axios.post(WHATSAPP_URL, body, { headers });
-
-    // logger.info(`Response: ${response.status} ${response.statusText}`);
-    // logger.info(`Body: ${JSON.stringify(response.data, null, 2)}`);
-
-    const data = response.data;
-
-    // Validar si Meta realmente aceptó el mensaje
-    if (data.messages && data.messages[0] && data.messages[0].id) {
-      logger.info(`✅ [ACEPTADO POR META] Mensaje ID: ${data.messages[0].id} → ${number}`);
-    } else {
-      logger.warn(`⚠️ WhatsApp respondió sin 'messages.id' para ${number}`);
-      logger.warn(`Respuesta completa: ${JSON.stringify(data, null, 2)}`);
-    }
-
-    return data;
-  } catch (error) {
-    const err = error.response?.data?.error || error.message;
-    logger.error(`❌ Error enviando WhatsApp a ${number}: ${err.message || err}`);
-    if (error.response?.data) {
-      logger.error('Detalles:', JSON.stringify(error.response.data, null, 2));
-    }
-    return null;
-  }
-}
-async function sendWhatsAppTemplateOverspeed(number, contactName, vehicle_name, event_date, coords = null) {
-  try {
-    const components = [
-      {
-        type: 'header',
         parameters: [
           {
-            type: 'image',
-            image: {
-              link: 'https://api.bireportslatam.com/images/dla-header-message-2.jpeg',
-            },
+            type: 'text',
+            text: `https://maps.google.com/?q=${coords}`, // {{1}} dinámico del botón
           },
         ],
-      },
-      {
-        type: 'body',
-        parameters: [
-          { type: 'text', text: vehicle_name },
-          { type: 'text', text: event_date },
-        ],
-      },
-    ];
-
-    if (coords) {
-      components.push({
-        type: 'button',
-        sub_type: 'url',
-        index: 0,
-        parameters: [{ type: 'text', text: coords }],
       });
     }
 
@@ -114,36 +68,31 @@ async function sendWhatsAppTemplateOverspeed(number, contactName, vehicle_name, 
       to: String(number),
       type: 'template',
       template: {
-        name: 'alerta_overspeed',
+        name: 'alerta_siniestro_2', // nombre exacto de tu plantilla
         language: { code: 'es_MX' },
         components,
       },
     };
 
     const response = await axios.post(WHATSAPP_URL, body, { headers });
-
-    // logger.info(`Response: ${response.status} ${response.statusText}`);
-    // logger.info(`Body: ${JSON.stringify(response.data, null, 2)}`);
-
     const data = response.data;
 
-    // Validar si Meta realmente aceptó el mensaje
-    if (data.messages && data.messages[0] && data.messages[0].id) {
-      logger.info(`✅ [ACEPTADO POR META] Mensaje ID: ${data.messages[0].id} → ${number}`);
+    if (data.messages?.[0]?.id) {
+      logger.info(`✅ [META OK] Mensaje ID ${data.messages[0].id} → ${number}`);
     } else {
-      logger.warn(`⚠️ WhatsApp respondió sin 'messages.id' para ${number}`);
-      logger.warn(`Respuesta completa: ${JSON.stringify(data, null, 2)}`);
+      logger.warn(`⚠️ Respuesta sin messages.id → ${number}`);
+      logger.warn(JSON.stringify(data, null, 2));
     }
 
     return data;
   } catch (error) {
     const err = error.response?.data?.error || error.message;
-    logger.error(`❌ Error enviando WhatsApp a ${number}: ${err.message || err}`);
+    logger.error(`❌ Error WhatsApp ${number}: ${err.message || err}`);
     if (error.response?.data) {
-      logger.error('Detalles:', JSON.stringify(error.response.data, null, 2));
+      logger.error(JSON.stringify(error.response.data, null, 2));
     }
     return null;
   }
 }
 
-module.exports = { sendWhatsAppTemplate,sendWhatsAppTemplateOverspeed };
+module.exports = { sendWhatsAppTemplateMultipleEvents };
