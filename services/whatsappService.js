@@ -2,7 +2,9 @@ const axios = require('axios');
 const logger = require('../utils/logger');
 
 const WHATSAPP_URL = 'https://graph.facebook.com/v22.0/123897187467489/messages';
+//const WHATSAPP_TOKEN = process.env.WHATSAPP_TOKEN;
 const WHATSAPP_TOKEN = 'EAAR0i6DhhjIBO5ZCuHiH29grsbd4mYQ6ydZB1KLAWqZBBPKSh15fz2m37jnhUP1OnfyUniM5LVMBfxg1S6TTRR9AOSnbL2ZBKGEIZAkIJXbUO5rfGcFZCCilRLR0PsZAVR52ZAF4RNfGIGex7y7O1aZAX7F6GzW98CYDsRcF7K8rIT7R8ZCQFesbYPgVN4KZC2FdaEZCwwZDZD';
+logger.info(`WHATSAPP_TOKEN cargado: ${process.env.WHATSAPP_TOKEN?.slice(0, 10)}...`);
 
 const headers = {
   Authorization: `Bearer ${WHATSAPP_TOKEN}`,
@@ -10,20 +12,36 @@ const headers = {
 };
 
 /**
- * Envía notificación de incidentes múltiples.
- * Variables esperadas:
+ * Envía notificación SOLO si hay exactamente 3 eventos.
+ *
+ * Variables esperadas por la plantilla:
  * {{1}} vehículo
  * {{2}} fecha
- * {{3}}, {{4}}, {{5}} eventos
- * botón dinámico con {{1}} = link del mapa
+ * {{3}} evento 1
+ * {{4}} evento 2
+ * {{5}} evento 3
+ * Botón dinámico {{1}} = link del mapa
  */
-async function sendWhatsAppTemplateMultipleEvents(number, vehicleName, eventDate, events = [], coords = null) {
+async function sendWhatsAppTemplateMultipleEvents(
+  number,
+  vehicleName,
+  eventDate,
+  events = [],
+  coords = null
+) {
   try {
-    const [e1, e2, e3] = [
-      events[0] || '—',
-      events[1] || '—',
-      events[2] || '—',
-    ];
+    // Normalizar eventos
+    const normalizedEvents = (events || []).filter(Boolean);
+
+    // Regla estricta: SOLO 3 eventos
+    if (normalizedEvents.length !== 3) {
+      logger.info(
+        `WhatsApp omitido → Se requieren exactamente 3 eventos (recibidos: ${normalizedEvents.length})`
+      );
+      return null;
+    }
+
+    const [e1, e2, e3] = normalizedEvents;
 
     const components = [
       {
@@ -40,8 +58,8 @@ async function sendWhatsAppTemplateMultipleEvents(number, vehicleName, eventDate
       {
         type: 'body',
         parameters: [
-          { type: 'text', text: vehicleName },  // {{1}}
-          { type: 'text', text: eventDate },    // {{2}}
+          { type: 'text', text: vehicleName }, // {{1}}
+          { type: 'text', text: eventDate },   // {{2}}
           { type: 'text', text: e1 },           // {{3}}
           { type: 'text', text: e2 },           // {{4}}
           { type: 'text', text: e3 },           // {{5}}
@@ -57,7 +75,7 @@ async function sendWhatsAppTemplateMultipleEvents(number, vehicleName, eventDate
         parameters: [
           {
             type: 'text',
-            text: `https://maps.google.com/?q=${coords}`, // {{1}} dinámico del botón
+            text: `https://maps.google.com/?q=${coords}`,
           },
         ],
       });
@@ -68,7 +86,7 @@ async function sendWhatsAppTemplateMultipleEvents(number, vehicleName, eventDate
       to: String(number),
       type: 'template',
       template: {
-        name: 'alerta_siniestro_2', // nombre exacto de tu plantilla
+        name: 'alerta_siniestro_2', // plantilla exacta
         language: { code: 'es_MX' },
         components,
       },
@@ -78,9 +96,9 @@ async function sendWhatsAppTemplateMultipleEvents(number, vehicleName, eventDate
     const data = response.data;
 
     if (data.messages?.[0]?.id) {
-      logger.info(`✅ [META OK] Mensaje ID ${data.messages[0].id} → ${number}`);
+      logger.info(`✅ WhatsApp enviado → ${number} | ID ${data.messages[0].id}`);
     } else {
-      logger.warn(`⚠️ Respuesta sin messages.id → ${number}`);
+      logger.warn(`⚠️ WhatsApp sin messages.id → ${number}`);
       logger.warn(JSON.stringify(data, null, 2));
     }
 

@@ -1,57 +1,135 @@
-// Ventana deslizante con “grace time” antes de notificar.
-const buffers = new Map(); // trackerId -> { events: [], lastNotifiedAt: number|null, timer: NodeJS.Timeout|null }
+/**
+ * Ventana deslizante con grace time y soporte para múltiples listeners.
+ * Reglas:
+ * - Ventana configurable (windowMs)
+ * - Grace time configurable (graceMs)
+ * - Notifica SOLO cuando hay EXACTAMENTE N tipos únicos
+ */
 
-let WINDOW_MS = 5 * 60 * 1000;   // 5 min
-let MIN_EVENTS = 2;
-let GRACE_MS = 30 * 1000;        // 30 s
-let flushCb = () => {};          // (trackerId, snapshot) => void
+const buffers = new Map();
+// trackerId => {
+//   events: Array<{ code, name, ts, lat, lng, eventDate }>,
+//   lastNotifiedAt: number | null,
+//   timer: NodeJS.Timeout | null
+// }
 
-function configure({ windowMs, minEvents, graceMs } = {}) {
-  if (windowMs) WINDOW_MS = windowMs;
-  if (minEvents) MIN_EVENTS = minEvents;
-  if (graceMs) GRACE_MS = graceMs;
+let WINDOW_MS = 5 * 60 * 1000;
+let GRACE_MS = 30 * 1000;
+let REQUIRED_UNIQUE_EVENTS = 3;
+
+// ✅ ahora soporta múltiples callbacks
+const flushCallbacks = [];
+
+/**
+ * Configura el agregador
+ */
+function configure({ windowMs, graceMs, requiredUniqueEvents } = {}) {
+  if (typeof windowMs === 'number') WINDOW_MS = windowMs;
+  if (typeof graceMs === 'number') GRACE_MS = graceMs;
+  if (typeof requiredUniqueEvents === 'number') {
+    REQUIRED_UNIQUE_EVENTS = requiredUniqueEvents;
+  }
 }
 
 /**
- * Registra callback que se ejecuta al finalizar el grace y enviar snapshot.
- * @param {(trackerId:string|number, snapshot:Array)=>void|Promise<void>} cb
+ * Registra un listener de flush (NO reemplaza a otros)
  */
 function onFlush(cb) {
-  flushCb = cb || (() => {});
+  if (typeof cb === 'function') {
+    flushCallbacks.push(cb);
+  }
 }
 
 /**
- * Agrega un evento y arma notificación tras GRACE_MS si se supera el umbral.
- * @param {string|number} trackerId
- * @param {{code:string,name:string,ts:number,lat:number,lng:number,speed?:number|null,eventDate:string}} event
+ * Ejecuta todos los listeners registrados
+ */
+async function runFlush(trackerId, snapshot) {
+  for (const cb of flushCallbacks) {
+    try {
+      await cb(trackerId, snapshot);
+    } catch (err) {
+      // Nunca romper el flujo por un listener
+    }
+  }
+}
+
+/**
+ * Agrega un evento al buffer del tracker
  */
 function pushEvent(trackerId, event) {
   const now = Date.now();
-  const bucket = buffers.get(trackerId) || { events: [], lastNotifiedAt: null, timer: null };
+
+  const bucket = buffers.get(trackerId) || {
+    events: [],
+    lastNotifiedAt: null,
+    timer: null,
+  };
+
   bucket.events.push(event);
 
-  // purgar fuera de ventana
+  // 1️⃣ Limpiar eventos fuera de la ventana
   bucket.events = bucket.events.filter(e => e.ts >= now - WINDOW_MS);
 
-  // si no hay timer activo y ya se alcanzó el mínimo, programa flush
-  const insideSameWindow = bucket.lastNotifiedAt && (now - bucket.lastNotifiedAt) < WINDOW_MS;
-  if (!bucket.timer && bucket.events.length >= MIN_EVENTS && !insideSameWindow) {
+  // 2️⃣ Contar tipos únicos
+  const uniqueCodes = new Set(bucket.events.map(e => e.code));
+  const uniqueCount = uniqueCodes.size;
+
+  // 3️⃣ Evitar múltiples notificaciones dentro de la misma ventana
+  const insideSameWindow =
+    bucket.lastNotifiedAt && now - bucket.lastNotifiedAt < WINDOW_MS;
+
+  // 4️⃣ Programar flush SOLO cuando haya EXACTAMENTE N tipos únicos
+  if (
+    uniqueCount === REQUIRED_UNIQUE_EVENTS &&
+    !bucket.timer &&
+    !insideSameWindow
+  ) {
     bucket.timer = setTimeout(async () => {
-      const snapshot = [...bucket.events].sort((a, b) => a.ts - b.ts);
-      bucket.lastNotifiedAt = Date.now();
-      bucket.timer = null;
-      try { await flushCb(trackerId, snapshot); } catch (_) {}
+      try {
+        const cutoff = Date.now() - WINDOW_MS;
+
+        // Revalidar ventana
+        const validEvents = bucket.events.filter(e => e.ts >= cutoff);
+
+        // Recalcular tipos únicos
+        const byCode = new Map();
+        for (const e of validEvents) {
+          if (!byCode.has(e.code)) byCode.set(e.code, e);
+        }
+
+        if (byCode.size !== REQUIRED_UNIQUE_EVENTS) {
+          bucket.timer = null;
+          return;
+        }
+
+        const snapshot = Array.from(byCode.values())
+          .sort((a, b) => a.ts - b.ts);
+
+        bucket.lastNotifiedAt = Date.now();
+        bucket.timer = null;
+
+        await runFlush(trackerId, snapshot);
+      } catch (err) {
+        bucket.timer = null;
+      }
     }, GRACE_MS);
   }
 
   buffers.set(trackerId, bucket);
-  return { count: bucket.events.length };
 }
 
-/** Devuelve el snapshot actual sin disparar notificación. */
+/**
+ * Obtiene snapshot actual (solo debug)
+ */
 function getSnapshot(trackerId) {
   const bucket = buffers.get(trackerId);
-  return bucket ? [...bucket.events].sort((a, b) => a.ts - b.ts) : [];
+  if (!bucket) return [];
+  return [...bucket.events].sort((a, b) => a.ts - b.ts);
 }
 
-module.exports = { configure, onFlush, pushEvent, getSnapshot };
+module.exports = {
+  configure,
+  onFlush,
+  pushEvent,
+  getSnapshot,
+};
