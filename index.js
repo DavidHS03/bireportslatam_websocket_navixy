@@ -10,12 +10,13 @@ const logger = require('./utils/logger');
     const trackerIds = await getTrackerIds(hash);
 
     if (!trackerIds.length) {
-      throw new Error("No se encontraron trackers");
+      throw new Error('No se encontraron trackers');
     }
 
-    logger.info("🔌 Iniciando conexión WebSocket con Navixy...");
-    connectWebSocket(hash, trackerIds);
+    logger.info('🔌 Iniciando conexión WebSocket con Navixy...');
+    connectWebSocket(hash, trackerIds); // ✅ vuelve a funcionar
   } catch (err) {
     logger.error(`❌ Error general: ${err.message}`);
+    process.exitCode = 1;
   }
 })();
